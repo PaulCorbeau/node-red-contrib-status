@@ -1,26 +1,52 @@
 <script type="text/html" data-template-name="nodered-status">
     <div class="form-row">
-        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Nodered Status</label>
+        <input type="text" id="node-input-name" placeholder="Nodered Status">
+        <div class="form-tips">
+            <i class="fa fa-info-circle"></i>The <b>Node-RED Status</b> node provides detailed information about the current Node-RED runtime environment
+        </div>
     </div>
 </script>
 
 <script type="text/html" data-help-name="nodered-status">
-    <p>A node that adds "Hello" to the input message</p>
+    <p>
+        The <b>Node-RED Status</b> node provides detailed information about the current Node-RED runtime environment, including:
+    </p>
+    <ul>
+        <li>Node-RED version and runtime information (platform, Node.js version, architecture).</li>
+        <li>Project dependencies (both runtime and development).</li>
+        <li>Installed Node-RED modules and their statistics.</li>
+        <li>Additional runtime details like uptime and working directory.</li>
+    </ul>
+    <p>
+        This node can be used to gather diagnostic information or to monitor the status of your Node-RED environment.
+    </p>
+    <h3>Usage</h3>
+    <p>
+        When triggered, this node sends a detailed payload containing all the collected information about the runtime and installed modules. 
+        The status of the node updates dynamically to show a summary:
+    </p>
+    <ul>
+        <li><b>Green:</b> The node is running normally, showing a count of Node-RED modules and dependencies.</li>
+        <li><b>Red:</b> An error occurred during execution, and the node status reflects the error message.</li>
+    </ul>
 </script>
 
 <script type="text/javascript">
     RED.nodes.registerType("nodered-status", {
-        category: "function",
-        color: "#a6bbcf",
+        category: "status",
+        color: "#87A980",
         defaults: {
-            name: { value: "" }
+            name: { value: "", required: false }
         },
         inputs: 1,
         outputs: 1,
-        icon: "function.png",
+        icon: "font-awesome/fa-cogs",
         label: function() {
-            return this.name || "nodered-status";
+            return this.name || "Node-RED Status";
+        },
+        labelStyle: function() {
+            return this.name ? "node_label_italic" : "";
         }
     });
 </script>

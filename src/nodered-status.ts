@@ -39,6 +39,7 @@ module.exports = (RED: NodeAPI) => {
             userDir: RED.settings.userDir,
           },
           noderedInfo: {
+            url: RED.settings.httpAdminRoot || RED.settings.httpRoot || '/',
             version,
             nodeRedModules,
             dependencies,
@@ -49,7 +50,19 @@ module.exports = (RED: NodeAPI) => {
               totalDevDependencies: Object.keys(devDependencies).length,
               totalInstalledModules: Object.keys(installedModules).length,
             }
+          },
+          summary: {
+            url: RED.settings.httpAdminRoot || RED.settings.httpRoot || '/',
+            platform: process.platform,
+            uptime: process.uptime(),
+            nodeVersion: process.version,
+            noderedVersion: version,
+            totalDependencies: Object.keys(dependencies).length,
+            nodeDependencies: dependencies,
+            totalDevDependencies: Object.keys(devDependencies).length,
+            nodeDevDependencies: devDependencies,
           }
+
         };
         // Update node status
         node.status({

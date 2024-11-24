@@ -48,6 +48,7 @@ export interface NodeRedInfo {
     userDir?: string;
   };
   noderedInfo: {
+    url: string;
     version: string;
     nodeRedModules: { [key: string]: PackageInfo };
     dependencies: { [key: string]: string };
@@ -59,4 +60,15 @@ export interface NodeRedInfo {
       totalInstalledModules: number;
     };
   };
+  summary: {
+    url: string;
+    platform: string;
+    uptime: number;
+    nodeVersion: string;
+    noderedVersion: string;
+    totalDependencies: number;
+    nodeDependencies: { [key: string]: string };
+    totalDevDependencies: number;
+    nodeDevDependencies: { [key: string]: string };
+  }
 }

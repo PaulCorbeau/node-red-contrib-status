@@ -73,7 +73,7 @@ module.exports = (RED: NodeAPI) => {
         node.status({
           fill: "green",
           shape: "dot",
-          text: `NR: ${Object.keys(nodeRedModules).length}, Deps: ${Object.keys(dependencies).length}, Dev: ${Object.keys(devDependencies).length}`
+          text: `Nodered Dependencies: ${Object.keys(dependencies).length}`
         });
         // Send response
         msg.payload = nodeRedInfo;

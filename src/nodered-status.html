@@ -1,0 +1,15 @@
+<script type="text/javascript">
+    RED.nodes.registerType("nodered-status", {
+        category: "function",
+        color: "#a6bbcf",
+        defaults: {
+            name: { value: "" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "function.png",
+        label: function() {
+            return this.name || "nodered-status";
+        }
+    });
+</script>

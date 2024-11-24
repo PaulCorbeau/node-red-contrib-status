@@ -1,0 +1,7 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Node-RED compiled files
+*.node-red-nodes

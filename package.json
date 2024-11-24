@@ -1,10 +1,12 @@
 {
   "name": "nodered-status",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/nodered-status.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node-red"
+    "build": "tsc && cp src/*.html dist/",
+    "prepare": "npm run build",
+    "start": "node-red",
+    "postinstall": "npm run build"
   },
   "keywords": [],
   "author": "",

@@ -4,7 +4,17 @@
     "module": "CommonJS",
     "strict": true,
     "esModuleInterop": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "@types/*": ["types/*"],
+      "@utils/*": ["utils/*"],
+      "@constants/*": ["constants/*"]
+    }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

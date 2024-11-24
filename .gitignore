@@ -5,3 +5,6 @@ package-lock.json
 
 # Node-RED compiled files
 *.node-red-nodes
+
+# Dist
+dist/

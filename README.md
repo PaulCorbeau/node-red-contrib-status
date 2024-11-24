@@ -63,8 +63,8 @@ The node outputs an object with the following structure:
     "nodeVersion": "v16.18.1",
     "noderedVersion": "3.0.0",
     "totalDependencies": 15,
-    "nodeDependencies": { ... },
+    "noderedDependencies": { ... },
     "totalDevDependencies": 5,
-    "nodeDevDependencies": { ... }
+    "noderedDevDependencies": { ... }
   }
 }

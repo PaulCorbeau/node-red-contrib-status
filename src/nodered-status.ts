@@ -63,9 +63,9 @@ module.exports = (RED: NodeAPI) => {
             nodeVersion: process.version,
             noderedVersion: version,
             totalDependencies: Object.keys(dependencies).length,
-            nodeDependencies: dependencies,
+            noderedDependencies: dependencies,
             totalDevDependencies: Object.keys(devDependencies).length,
-            nodeDevDependencies: devDependencies,
+            noderedDevDependencies: devDependencies,
           }
 
         };

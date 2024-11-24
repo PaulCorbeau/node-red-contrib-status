@@ -81,8 +81,8 @@ export interface NodeRedInfo {
     nodeVersion: string;
     noderedVersion: string;
     totalDependencies: number;
-    nodeDependencies: { [key: string]: string };
+    noderedDependencies: { [key: string]: string };
     totalDevDependencies: number;
-    nodeDevDependencies: { [key: string]: string };
+    noderedDevDependencies: { [key: string]: string };
   }
 }

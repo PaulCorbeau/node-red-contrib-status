@@ -1,6 +1,6 @@
 import { NodeAPI, Node, NodeMessageInFlow } from "node-red";
 import type { NoderedStatus, PackageInfo, NodeRedInfo } from './types';
-import { readPackageJson, getNodeModules, filterNodeRedModules } from './utils';
+import { readPackageJson, getNodeModules, filterNodeRedModules, getDeploymentUrls } from './utils';
 import { paths } from './constants';
 
 module.exports = (RED: NodeAPI) => {
@@ -22,6 +22,8 @@ module.exports = (RED: NodeAPI) => {
         // Get all installed modules and filter Node-RED
         const installedModules = getNodeModules(nodeModules, RED);
         const nodeRedModules = filterNodeRedModules(installedModules);
+        // Get deployment URLs
+        const deploymentInfo = getDeploymentUrls(RED);
         // Create response object
         const nodeRedInfo: NodeRedInfo = {
           nodeInfo: {
@@ -39,7 +41,7 @@ module.exports = (RED: NodeAPI) => {
             userDir: RED.settings.userDir,
           },
           noderedInfo: {
-            url: RED.settings.httpAdminRoot || RED.settings.httpRoot || '/',
+            deployment: deploymentInfo,
             version,
             nodeRedModules,
             dependencies,
@@ -52,7 +54,10 @@ module.exports = (RED: NodeAPI) => {
             }
           },
           summary: {
-            url: RED.settings.httpAdminRoot || RED.settings.httpRoot || '/',
+            runtimeUrl: deploymentInfo.runtimeUrl,
+            adminUrl: deploymentInfo.adminUrl,
+            domain: deploymentInfo.domain,
+            port: deploymentInfo.port,
             platform: process.platform,
             uptime: process.uptime(),
             nodeVersion: process.version,

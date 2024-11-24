@@ -30,6 +30,17 @@ export interface RootPackage extends PackageInfo {
 }
 
 /**
+ * Deployment information structure
+ */
+export interface DeploymentInfo {
+  adminUrl: string;
+  deployUrl: string;
+  runtimeUrl: string;
+  domain: string;
+  port: number;
+}
+
+/**
  * Node-RED information response structure
  */
 export interface NodeRedInfo {
@@ -48,7 +59,7 @@ export interface NodeRedInfo {
     userDir?: string;
   };
   noderedInfo: {
-    url: string;
+    deployment: DeploymentInfo;
     version: string;
     nodeRedModules: { [key: string]: PackageInfo };
     dependencies: { [key: string]: string };
@@ -61,7 +72,10 @@ export interface NodeRedInfo {
     };
   };
   summary: {
-    url: string;
+    runtimeUrl: string;
+    adminUrl: string;
+    domain: string;
+    port: number;
     platform: string;
     uptime: number;
     nodeVersion: string;

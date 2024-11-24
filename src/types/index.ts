@@ -5,5 +5,6 @@ export type {
   NoderedStatus,
   PackageInfo,
   RootPackage,
-  NodeRedInfo
+  NodeRedInfo,
+  DeploymentInfo
 } from './interfaces';

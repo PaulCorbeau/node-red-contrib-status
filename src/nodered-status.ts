@@ -10,19 +10,19 @@ module.exports = (RED: NodeAPI) => {
 
     node.on("input", async (msg: NodeMessageInFlow, send: (msg: NodeMessageInFlow) => void) => {
       try {
-        // Attendre la version de Node-RED
+        // Get Node-RED version
         const version = await RED.version();
-
+        // Get user directory and paths
         const userDir = RED.settings.userDir || process.cwd();
         const { rootPackageJson, nodeModules } = paths(userDir);
-
+        // Read root package.json and get dependencies
         const rootPackage = readPackageJson(rootPackageJson, RED) || {} as PackageInfo;
         const dependencies = rootPackage.dependencies || {};
         const devDependencies = rootPackage.devDependencies || {};
-
+        // Get all installed modules and filter Node-RED
         const installedModules = getNodeModules(nodeModules, RED);
         const nodeRedModules = filterNodeRedModules(installedModules);
-
+        // Create response object
         const nodeRedInfo: NodeRedInfo = {
           nodeInfo: {
             id: node.id,
@@ -51,13 +51,13 @@ module.exports = (RED: NodeAPI) => {
             }
           }
         };
-
+        // Update node status
         node.status({
           fill: "green",
           shape: "dot",
           text: `NR: ${Object.keys(nodeRedModules).length}, Deps: ${Object.keys(dependencies).length}, Dev: ${Object.keys(devDependencies).length}`
         });
-
+        // Send response
         msg.payload = nodeRedInfo;
         send(msg);
 
@@ -70,11 +70,11 @@ module.exports = (RED: NodeAPI) => {
         });
       }
     });
-
+    // Clear status on node close
     node.on("close", () => {
       node.status({});
     });
   }
-
+  // Register the node
   RED.nodes.registerType("nodered-status", NoderedStatus);
 };

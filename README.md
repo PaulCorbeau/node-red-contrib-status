@@ -41,7 +41,7 @@ The node outputs an object with the following structure:
     "userDir": "/data"
   },
   "noderedInfo": {
-    "url": "/",
+    "deployment": { ... },
     "version": "3.0.0",
     "nodeRedModules": { ... },
     "dependencies": { ... },
@@ -54,7 +54,10 @@ The node outputs an object with the following structure:
     }
   },
   "summary": {
-    "url": "/",
+    "runtimeUrl": "http://localhost:1880/",
+    "adminUrl": "http://localhost:1880/admin",
+    "domain": "localhost",
+    "port": 1880,
     "platform": "linux",
     "uptime": 123456.789,
     "nodeVersion": "v16.18.1",

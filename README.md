@@ -1,6 +1,11 @@
 # Node-RED Status Node
 
-The **Node-RED Status** node provides detailed information about the current Node-RED runtime environment. It can be used for diagnostics and monitoring purposes. Here's what it offers:
+The **Node-RED Status** node provides detailed information about the current Node-RED runtime environment. It can be used for diagnostics and monitoring purposes. 
+
+The goal is mainly to be used when you're supporting multiple Node-RED instances and need to quickly check the environment details. 
+The end goal will be to provide a global view of all your Node-RED instances and check their health status, dependencies, and more.
+
+Here's what it offers so far:
 
 ## Features
 - **Runtime Information**:
@@ -37,6 +42,8 @@ The node outputs an object with the following structure:
     "nodeVersion": "v16.18.1",
     "arch": "x64",
     "uptime": 123456.789,
+    "cpuUsage": 0.5,
+    "memoryUsage": 1000000,
     "cwd": "/usr/src/node-red",
     "userDir": "/data"
   },

@@ -37,6 +37,8 @@ module.exports = (RED: NodeAPI) => {
             nodeVersion: process.version,
             arch: process.arch,
             uptime: process.uptime(),
+            cpuUsage: process.cpuUsage(),
+            memoryUsage: process.memoryUsage(),
             cwd: process.cwd(),
             userDir: RED.settings.userDir,
           },

@@ -55,6 +55,8 @@ export interface NodeRedInfo {
     nodeVersion: string;
     arch: string;
     uptime: number;
+    cpuUsage: NodeJS.CpuUsage;
+    memoryUsage: NodeJS.MemoryUsage;
     cwd: string;
     userDir?: string;
   };

@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-status",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "main": "dist/nodered-status.js",
   "scripts": {
     "prebuild": "npm test",
@@ -19,25 +19,24 @@
     "dependencies"
   ],
   "author": "Paul Corbeau <paul.corbeau@gmail.com>",
+  "url": "https://github.com/PaulCorbeau/node-red-contrib-status/issues",
+  "homepage": "https://github.com/PaulCorbeau/node-red-contrib-status#readme",
+  "email": "paul.corbeau@gmail.com",
   "license": "MIT",
   "description": "A Node-RED node for monitoring runtime status and dependencies.",
   "repository": {
     "type": "git",
     "url": "https://github.com/PaulCorbeau/node-red-contrib-status.git"
   },
-  "homepage": "https://github.com/PaulCorbeau/node-red-contrib-status#readme",
-  "bugs": {
-    "url": "https://github.com/PaulCorbeau/node-red-contrib-status/issues"
-  },
   "engines": {
-    "node": ">=16.0.0",
-    "node-red": ">=3.0.0"
+    "node": ">=16.0.0"
   },
   "node-red": {
     "nodes": {
       "nodered-status": "dist/nodered-status.js"
     },
-    "examples": "examples/"
+    "examples": "examples/",
+    "version": ">=3.0.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",

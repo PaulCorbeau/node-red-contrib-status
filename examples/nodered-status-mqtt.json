@@ -1,0 +1,101 @@
+[
+  {
+    "id": "6dae140c4d4cab37",
+    "type": "tab",
+    "label": "Flux 1",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "2ad25e59c7ada060",
+    "type": "nodered-status",
+    "z": "6dae140c4d4cab37",
+    "name": "",
+    "x": 330,
+    "y": 440,
+    "wires": [
+      [
+        "767577bfb67f9c78"
+      ]
+    ]
+  },
+  {
+    "id": "fa9a5215b937cf84",
+    "type": "inject",
+    "z": "6dae140c4d4cab37",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "10",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 110,
+    "y": 440,
+    "wires": [
+      [
+        "2ad25e59c7ada060"
+      ]
+    ]
+  },
+  {
+    "id": "767577bfb67f9c78",
+    "type": "mqtt out",
+    "z": "6dae140c4d4cab37",
+    "name": "",
+    "topic": "nodered/info",
+    "qos": "1",
+    "retain": "",
+    "respTopic": "",
+    "contentType": "",
+    "userProps": "",
+    "correl": "",
+    "expiry": "",
+    "broker": "58c81b5b9442e8cc",
+    "x": 610,
+    "y": 440,
+    "wires": []
+  },
+  {
+    "id": "58c81b5b9442e8cc",
+    "type": "mqtt-broker",
+    "name": "",
+    "broker": "172.18.0.2",
+    "port": "1883",
+    "clientid": "",
+    "autoConnect": true,
+    "usetls": false,
+    "protocolVersion": "4",
+    "keepalive": "60",
+    "cleansession": true,
+    "autoUnsubscribe": true,
+    "birthTopic": "",
+    "birthQos": "0",
+    "birthRetain": "false",
+    "birthPayload": "",
+    "birthMsg": {},
+    "closeTopic": "",
+    "closeQos": "0",
+    "closeRetain": "false",
+    "closePayload": "",
+    "closeMsg": {},
+    "willTopic": "",
+    "willQos": "0",
+    "willRetain": "false",
+    "willPayload": "",
+    "willMsg": {},
+    "userProps": "",
+    "sessionExpiry": ""
+  }
+]

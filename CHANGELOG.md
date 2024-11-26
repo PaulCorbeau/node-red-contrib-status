@@ -20,6 +20,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Corrected the issue with `NoderedStatus` not being exported properly.
 - Fixed the issue with `readPackageJson` mock implementation in tests.
 
+## [0.0.4] - 26/11/2024
+### Changed
+- Updated documentation for `NoderedStatus` node.
+- Updated package.json to be aligned with Node-RED conventions.
+
 ## [0.0.3] - 25/11/2024
 ### Added
 - Added tests for `getDeploymentUrls` function.

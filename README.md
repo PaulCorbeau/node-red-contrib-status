@@ -32,6 +32,7 @@ The node's status updates dynamically:
 - **Health Checks**: Check the health status of Node-RED instances.
 - **Dependency Updates**: Notify users when dependencies are outdated.
 - **Security Checks**: Identify security vulnerabilities in dependencies.
+- **MQTT inventory**: List all topics listened/subscribed.
 
 ## Example Payload
 The node outputs an object with the following structure:

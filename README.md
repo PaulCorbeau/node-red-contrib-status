@@ -27,6 +27,13 @@ The node's status updates dynamically:
 - **Green**: Running successfully, with a summary of Node-RED modules and dependencies.
 - **Red**: An error occurred, and the status displays the error message.
 
+## Future Plans
+- **Global Monitoring**: Monitor multiple Node-RED instances from a single dashboard.
+- **Health Checks**: Check the health status of Node-RED instances.
+- **Dependency Updates**: Notify users when dependencies are outdated.
+- **Security Checks**: Identify security vulnerabilities in dependencies.
+- **MQTT inventory**: List all topics listened/subscribed.
+
 ## Example Payload
 The node outputs an object with the following structure:
 ```json
